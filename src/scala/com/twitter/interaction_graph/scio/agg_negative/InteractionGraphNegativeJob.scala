@@ -46,6 +46,20 @@ object InteractionGraphNegativeJob extends ScioBeamJob[InteractionGraphNegativeO
     opts: InteractionGraphNegativeOption
   ): Unit = {
 
+    /*There is clearly a PROBLEM with this aproach: ShadowBan is supposed to ban abusers from the plataform, but with
+    * this code, it can be used by malicious groups and virtual militias to produce a coordinated ATTACK to silence
+    * someone they don't like. There are several reports of this on Twitter, people who defend human rights or
+    * produce anti-racist content are being attacked by Follow -> unfollow or block / mute attacks, producing the
+    * unbalance needed to shadowBan someone
+    *
+    * This is COMPLETELY AGAINST THE IDEIA OF FREE SPEECH. A group of criminals or virtual militias can now SILENCE
+    * someone they don't like, and this is now ends up being perceived by the user because it is possible to see the V
+    * views statistics of his tweets and replies.
+    *
+    * A lot of people are being unfairly silenced by malicious groups now that they know this code and understand
+    * that it's possible to do it.*/
+
+
     val endTs = opts.interval.getEndMillis
 
     // read input datasets
